@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/config', 'UserController@config')->name('config');
+Route::resource('courses','CourseController');
+Route::resource('themes','ThemeController');

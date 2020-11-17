@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     //
-    protected $table = "courses";
-    public function matter(){
-        return $this->hasMany('App\Matter');
-    }
+
+
+    protected $fillable = [
+        'name_cour', 'description'
+    ];
 }
