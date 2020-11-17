@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleEvasTable extends Migration
+class CreateAssistentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateDetalleEvasTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_evas', function (Blueprint $table) {
+        Schema::create('assistents', function (Blueprint $table) {
             $table->id();
-            $table->string('respuesta_estudiante');
+            $table->string('assistents');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateDetalleEvasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_evas');
+        Schema::dropIfExists('assistents');
     }
 }
